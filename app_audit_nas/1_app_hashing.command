@@ -63,7 +63,9 @@ else
   fi
 fi
 # Eviter la demande de citation
-parallel --citation >/dev/null 2>&1 || true
+# parallel --citation >/dev/null 2>&1 || true
+parallel --citation <<<"will cite" >/dev/null 2>&1 || true
+
 
 # Étape 4 — gsed
 if command -v gsed >/dev/null 2>&1; then
