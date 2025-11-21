@@ -4,17 +4,16 @@
 # Caractéristiques :
 # - Valeurs par défaut silencieuses (jobs/batch/B3FLAGS/parallel : pas de boîtes)
 # - Sélection des dossiers à scanner en plusieurs tours (OK pour ajouter, Annuler pour terminer)
-# - Choix d’un dossier parent ; le launcher crée un sous-dossier dédié au run (Option A)
+# - Choix d’un dossier parent ; le launcher crée un sous-dossier dédié au run
 # - Lance le script dans Terminal avec une commande passée via variable d’environnement
 #
 # Résultat :
 #   <DOSSIER_PARENT>/hashing_run_YYYYMMDD_HHMMSS/
 #       ├─ audit_hashes.csv
-#       ├─ audit_hashes.missing.csv
-#       └─ audit_hashes.dirs.csv
+#       └─ tree_paths.html
 #
 # Remarques :
-# - Le script Python archifiltre_like_visualization_echarts3.py doit être à côté de ce fichier .command.
+# - Le script Python doit être à côté de ce fichier .command.
 
 echo " Début du test d'installation des dépendances"
 echo "----------------------------------------------"
