@@ -102,8 +102,24 @@ else
     echo " Veuillez installer Python 3.11 manuellement depuis https://www.python.org/downloads/."
   fi
 fi
-
-# Étape 6 — Outils POSIX
+# Étape 6 — bash
+if command -v bash >/dev/null 2>&1; then
+  echo " bash déjà présent : $(command -v bash)"
+else
+  echo " bash non trouvé. Installation en cours..."
+  if command -v brew >/dev/null 2>&1; then
+    brew install bash
+  elif command -v apt >/dev/null 2>&1; then
+    sudo apt install bash
+  elif command -v dnf >/dev/null 2>&1; then
+    sudo dnf install bash
+  elif command -v pacman >/dev/null 2>&1; then
+    sudo pacman -S bash
+  else
+    echo " Aucun gestionnaire de paquets compatible trouvé pour installer bash."
+  fi
+fi
+# Étape 7 — Outils POSIX
 echo " Vérification des outils système requis :"
 for cmd in find stat awk xattr df mktemp wc grep ls sort; do
   if command -v "$cmd" >/dev/null 2>&1; then
